@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Todo {
-    private static ArrayList<String> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
+        ArrayList<String> tasks = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         String input;
 
@@ -14,16 +14,16 @@ public class Todo {
 
             switch (input) {
                 case "1":
-                    addTask(scanner);
+                    addTask(tasks, scanner);
                     break;
                 case "2":
-                    removeTask(scanner);
+                    removeTask(tasks, scanner);
                     break;
                 case "3":
-                    markTaskAsComplete(scanner);
+                    markTaskAsComplete(tasks, scanner);
                     break;
                 case "4":
-                    displayTasks();
+                    displayTasks(tasks);
                     break;
                 case "5":
                     System.out.println("Goodbye!");
@@ -44,17 +44,17 @@ public class Todo {
         System.out.print("Enter your choice: ");
     }
 
-    private static void addTask(Scanner scanner) {
+    private static void addTask(ArrayList<String> tasks, Scanner scanner) {
         System.out.print("Enter the task name: ");
         String task = scanner.nextLine();
         tasks.add(task);
         System.out.println("Task added successfully!");
     }
 
-    private static void removeTask(Scanner scanner) {
-        displayTasks();
+    private static void removeTask(ArrayList<String> tasks, Scanner scanner) {
+        displayTasks(tasks);
         System.out.print("Enter the index of the task to remove: ");
-        int index = scanner.nextInt() - 1;
+        int index = scanner.nextInt();
         scanner.nextLine();
 
         if (index >= 0 && index < tasks.size()) {
@@ -65,10 +65,10 @@ public class Todo {
         }
     }
 
-    private static void markTaskAsComplete(Scanner scanner) {
-        displayTasks();
+    private static void markTaskAsComplete(ArrayList<String> tasks, Scanner scanner) {
+        displayTasks(tasks);
         System.out.print("Enter the index of the task to mark as complete: ");
-        int index = scanner.nextInt() - 1;
+        int index = scanner.nextInt();
         scanner.nextLine();
 
         if (index >= 0 && index < tasks.size()) {
@@ -80,14 +80,14 @@ public class Todo {
         }
     }
 
-    private static void displayTasks() {
+    private static void displayTasks(ArrayList<String> tasks) {
         System.out.println("\n---- Task List ----");
 
         if (tasks.isEmpty()) {
             System.out.println("No tasks found.");
         } else {
             for (int i = 0; i < tasks.size(); i++) {
-                System.out.println(i + 1 + ". " + tasks.get(i));
+                System.out.println(i + ". " + tasks.get(i));
             }
         }
     }
