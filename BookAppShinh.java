@@ -1,9 +1,3 @@
-
-/*
- name: EKJYOT SINGH SHINH
- Date:June 26, 2022
- My expected grade for this assignment is 100 since all the requirements are fulfilled
- */
 import java.util.*;
 
 public class BookAppShinh {

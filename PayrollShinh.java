@@ -1,9 +1,3 @@
-/*
- name: EKJYOT SINGH SHINH
- Date:June 8, 2022
- My expected grade for this assignment is 100 since all the requirements are fulfilled
- */
-
 public class PayrollShinh { // list of the instnace variables
     private String employeeName = "";
     private String ID = "";

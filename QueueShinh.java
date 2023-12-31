@@ -1,9 +1,3 @@
-
-/*
- name: EKJYOT SINGH SHINH
- Date:Jujy 6, 2022
- My expected grade for this assignment is 100 since all the requirements are fulfilled
- */
 import java.util.Stack;
 import java.util.ArrayList;
 
